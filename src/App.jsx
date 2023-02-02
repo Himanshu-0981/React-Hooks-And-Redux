@@ -1,19 +1,25 @@
-import React from 'react'
-import useFetch from './useFetch'
+import React,{Component} from 'react';
 
-const App = () => {
-    const [data] = useFetch('https://hub.dummyapis.com/employee?noofRecords=10&idStarts=1001')
-  return (
-    <>
-        <h1>Custom Hook In React Js</h1>
-        {
-            data.map((elem,index)=>
-                <h1 key={index}>{elem.firstName}</h1>
-            )
-        }
-        
-    </>
-  )
+class App extends Component {
+  state = {
+    count : 0,
+  }
+
+  inc = () => {
+    this.setState({
+      count : this.state.count+1
+    })
+  }
+  render(){
+    return (
+      <>
+        <h1>Class Components</h1>
+        <h3>count :  {this.state.count}</h3>
+        <button onClick={this.inc}>Increment</button>
+        <button onClick={()=>this.setState({count:this.state.count-1})}>Decrement</button>
+      </>
+    )
+  }
 }
 
-export default App
+export default App;
