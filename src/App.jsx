@@ -1,11 +1,14 @@
 import React from "react";
-import Counter from "./features/Counter";
+import About from "./pages/About";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
     <>
       <h1>Redux Toolkit Tutorial</h1>
-      <Counter />
+      {/* <Counter /> */}
+      <Home />
+      <About />
     </>
   );
 };
